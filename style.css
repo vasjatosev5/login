@@ -1,0 +1,184 @@
+
+body {
+  margin: 0;                           
+  background: #011ea0;                  
+  color: #fff;                          
+  font-family: Arial, sans-serif;       
+}
+
+/* LOGO */
+.logo-box {
+  display: flex;                        /* da centriras */
+  justify-content: center;              /* logo da na sredino */
+  padding: 30px 0;                      
+}
+
+/* GLAVNI div */
+.two-col {
+  display: flex;                        /* notranje dive da v vrsto */
+  justify-content: center;              
+  align-items: flex-start;              /* vrh obeh divov da na isto višino */
+  gap: 80px;                            /* razmak med levim in desnim stolpcem */
+  padding: 40px;                        
+  flex-wrap: wrap;                      /* omogoči skakanje v novo vrstico ko zmanjka prostora */
+}
+
+/*  Kartice z vsebino (levo in desno)*/
+.card {
+  width: 380px;                         
+  max-width: 90%;                       /* na manjših zaslonih omeji širino na 90 % */
+  box-sizing: border-box;               /* vključuje padding v skupno širino */
+}
+
+/* Naslovi (Login, Create Account...) */
+h1 {
+  font-size: 32px;                      
+  font-weight: 700;                     
+  margin-bottom: 20px;                  /* razmik pod naslovom */
+}
+
+/*  Bela črta pod naslovom na registracijski strani  */
+.divider {
+  width: 80px;                          
+  height: 4px;                        
+  background: #fff;                     
+  margin-bottom: 20px;                  /* prostor pod črto */
+}
+
+
+p {
+  color: #9ea5d7;                       /* svetla modra */
+  line-height: 1.5;                     /* višina vrstice */
+}
+
+/*Oznake (Email, Password...) */
+label {
+  display: block;                       /* vsaka oznaka na svojo vrstico */
+  margin: 18px 0 6px;                   /* zgornji in spodnji razmik */
+  font-size: 14px;                      
+}
+
+/* Polja za vnos podatkov*/
+input {
+  width: 100%;                          /* naj zasede vso širino starša (.card) */
+  padding: 14px;                        
+  border: 1px solid rgba(255,255,255,0.3); /* svetlo obrobo za vnosna polja */
+  background: transparent;              /* prozorno ozadje */
+  color: #fff;                          
+  border-radius: 4px;                   /* zaobljeni robovi */
+  box-sizing: border-box;               /* padding ne povečuje širine elementa */
+}
+
+/* Barva besedila znotraj placeholderja  */
+input::placeholder {
+  color: rgba(255,255,255,0.5);         /* polprosojna bela */
+}
+
+/* Seznam pravil za geslo */
+.password-rules {
+  list-style: circle;                   /*  krogci */
+  margin: 12px 0 20px 20px;             /* razmik okoli seznama */
+  color: #9ea5d7;                       /* svetlomodra barva teksta */
+  font-size: 14px;                      
+}
+
+/* Tekst pogojev registracije */
+.terms {
+  font-size: 13px;                      
+  color: #9ea5d7;                       
+}
+
+/* Povezave v pogojih (Terms & Privacy) */
+.terms a {
+  color: #fff;                          
+  text-decoration: underline;           
+}
+
+/* Gumbi (login, signup, register, sign free) */
+button,
+.register-btn,
+.login-btn,
+.signup-btn,
+.signfree {
+  display: inline-block;                /* omogoča padding in margin */
+  padding: 12px 32px;                   /* velikost gumba */
+  border: none;                         
+  background: #fff;                     
+  color: #0027A7;                       
+  font-weight: bold;                    
+  cursor: pointer;                      /* miška se spremeni ob prehodu */
+  text-decoration: none;                
+  text-align: center;                   
+  border-radius: 4px;                   
+  transition: 0.3s ease;                /* da gre lepo skozi pri hoverju */
+}
+
+/*  ko gres z miško čez gumb --- */
+button:hover,
+.signfree:hover,
+.register-btn:hover {
+  background: #e0e0e0;                  /* siva */
+}
+
+/* Sekcija z dodatnimi povezavami pod gumbom */
+.actions {
+  margin-top: 28px;                     
+  text-align: center;                  
+}
+
+/* Povezave v sekciji actions */
+.actions a {
+  color: #fff;                          
+  text-decoration: underline;           
+  font-size: 14px;                      
+}
+
+/* Naslov "Register with" */
+.register-with {
+  margin-top: 40px;                     
+  margin-bottom: 10px;                  
+  color: #fff;                          
+  font-weight: bold;                    
+}
+
+/* RESPONSIVE: prilagoditev manjšim zaslonom */
+@media (max-width: 1000px) {            /* pravila za zaslone ožje od 1000px */
+  .two-col {
+    flex-direction: column;             /* postavi stolpca enega pod drugega */
+    align-items: center;                /* poravnaj na sredino */
+    text-align: center;                 
+    gap: 40px;                          /* zmanjša razmik med blokoma */
+  }
+
+  .card {
+    width: 90%;                         /* kartice se razširijo skoraj čez cel zaslon */
+    max-width: 420px;                   /* vendar ne več kot 420px */
+  }
+
+  h1 {
+    font-size: 28px;                    
+  }
+
+  .divider {
+    margin: 0 auto 20px auto;           /* črta centrirana pod naslovom */
+  }
+
+  label {
+    text-align: left;                   
+  }
+}
+
+/* Še bolj prilagodljivo za telefone / zelo majhne zaslone */
+@media (max-width: 600px) {             /* pravila za zaslone pod 600px */
+  body {
+    font-size: 14px;                    
+  }
+
+  input {
+    padding: 12px;                      
+  }
+
+  button {
+    width: 100%;                        
+  }
+}
