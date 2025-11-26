@@ -30,19 +30,20 @@
 
     <!-- Desni del – obrazec za registracijo -->
     <div class="right card">
-      <form>
+      <form action="#" name="register">
         <label>Email address*</label>
-        <input type="email" placeholder="Insert your Email">
+        <input type="email" name="email" placeholder="Insert your Email">
 
         <label>Password*</label>
-        <input type="password" placeholder="Password">
+        <input type="password" name="pw1"placeholder="Password">
 
         <label>Confirm Password*</label>
-        <input type="password" placeholder="Password">
+        <input type="password" name="pw2" placeholder="Password">
 
         <ul class="password-rules">
           <li>8 characters minimum</li>
           <li>One uppercase character</li>
+		  <li>One number</li>
           <li>One special character</li>
         </ul>
 
@@ -51,7 +52,7 @@
           confirm that I have read the <a href="#">Privacy Policy</a> of Inter.
         </p>
 
-        <button type="submit" class="register-btn">REGISTER</button>
+        <button type="button" class="register-btn" onclick="registerfunction()">REGISTER</button>
       </form>
 
       <div class="actions">
@@ -60,6 +61,7 @@
     </div>
 
   </div>
-
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="script.js"></script>
 </body>
 </html>
